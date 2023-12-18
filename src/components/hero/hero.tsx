@@ -64,7 +64,7 @@ function Hero({
             <div ref={addToScrollRevealRef}>
               <NewsletterForm
                 className="mx-auto mt-8 max-w-md lg:mx-0"
-                submitText="Get early access"
+                submitText="Log in / Sign up"
                 onSubmit={onNewsletterSubmit}
               />
             </div>

@@ -31,7 +31,7 @@ function NewsletterForm({
       onSubmit={handleSubmit}
       className={cn('newsletter-form is-revealing flex flex-col gap-2 sm:flex-row', className)}
     >
-      <div className="mr-2 flex-shrink flex-grow">
+      {/* <div className="mr-2 flex-shrink flex-grow">
         <label className="hidden" htmlFor="email" aria-hidden="true">
           Email
         </label>
@@ -49,12 +49,15 @@ function NewsletterForm({
         {success && (
           <div className="mt-2 text-xs italic text-gray-500">Email submitted successfully!</div>
         )}
-      </div>
+      </div> */}
 
       <div className="control">
         <button
           className="-mt-px inline-flex cursor-pointer justify-center whitespace-nowrap rounded-sm border-0 bg-gradient-to-r from-secondary-500 to-secondary-400 px-7 py-4 text-center font-medium leading-4 text-white no-underline shadow-lg"
           type="submit"
+          style={{
+            backgroundColor: 'blue !important',
+          }}
         >
           {submitText}
         </button>

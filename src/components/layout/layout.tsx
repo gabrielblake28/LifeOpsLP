@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react'
-
+import '../css/styles.css'
 import { Footer } from '@/components/footer'
 import { Gradient } from '@/components/gradient'
 import { Header } from '@/components/header'
@@ -14,7 +14,8 @@ function Layout({
   return (
     <div
       className={cn(
-        'relative mx-auto my-0 flex min-h-screen max-w-screen-2xl flex-col overflow-hidden bg-white shadow-2xl',
+        ' max-width-and-zoom relative mx-auto my-0 flex min-h-screen max-w-screen-2xl flex-col overflow-hidden bg-white shadow-2xl',
+
         className,
       )}
     >

@@ -1,6 +1,8 @@
 import { Gradient } from '@/components/gradient'
 import { useEffect, useRef } from 'react'
 import ScrollReveal from 'scrollreveal'
+import gif from '../../assets/LifeOpsLPGif.gif'
+import '../css/styles.css'
 
 function Illustration({ className }: { className?: string }) {
   const scrollRevealOneRef = useRef<HTMLDivElement[]>([])
@@ -129,8 +131,13 @@ function Illustration({ className }: { className?: string }) {
           <circle cx="100" cy="100" r="100" fill="url(#ball-2-a)" fillRule="evenodd" />
         </svg>
       </div>
-      <div ref={addToScrollRevealTwoRef} className="hero-illustration-browser drop-shadow-2xl">
-        <svg
+      <div
+        ref={addToScrollRevealTwoRef}
+        className="hero-illustration-browser gif-width drop-shadow-2xl"
+      >
+        <img src={gif} alt="Mantis" width="100%" />
+
+        {/* <svg
           className="ml-auto max-w-screen-sm lg:max-w-none"
           width="800"
           height="450"
@@ -306,7 +313,7 @@ function Illustration({ className }: { className?: string }) {
               />
             </g>
           </g>
-        </svg>
+        </svg> */}
       </div>
       <div
         className="hero-ball hero-ball-3 absolute drop-shadow-2xl"

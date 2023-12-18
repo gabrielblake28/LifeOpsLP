@@ -1,0 +1,15 @@
+.max-width-and-zoom {
+  max-width: none !important;
+  /* zoom: 1.1; */
+}
+
+.gif-width {
+  width: 190%;
+  @media (max-width: 1600px) {
+    width: 150%;
+  }
+
+  @media (max-width: 1025px) {
+    width: 100%;
+  }
+}
