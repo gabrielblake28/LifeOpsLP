@@ -1,8 +1,16 @@
 import { NewsletterForm } from '@/components/newsletter-form'
 import { cn } from '@/utils/cn'
+import {
+  GoogleAuthProvider,
+  browserPopupRedirectResolver,
+  getAuth,
+  signInWithPopup,
+  signInWithRedirect,
+} from 'firebase/auth'
 import type { ReactNode } from 'react'
 import { useEffect, useRef } from 'react'
 import ScrollReveal from 'scrollreveal'
+import { firebaseApp } from '../../firebase/firebaseConfig'
 
 type ScrollRevealRefElement = HTMLDivElement | HTMLHeadingElement | HTMLParagraphElement
 
@@ -65,7 +73,13 @@ function Hero({
               <NewsletterForm
                 className="mx-auto mt-8 max-w-md lg:mx-0"
                 submitText="Log in / Sign up"
-                onSubmit={onNewsletterSubmit}
+                onSubmit={() => {
+                  signInWithRedirect(
+                    getAuth(firebaseApp),
+                    new GoogleAuthProvider(),
+                    browserPopupRedirectResolver,
+                  )
+                }}
               />
             </div>
           </div>

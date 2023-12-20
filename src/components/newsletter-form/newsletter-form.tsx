@@ -8,7 +8,7 @@ function NewsletterForm({
   submitText = 'Submit',
 }: {
   className?: string
-  onSubmit: (email: string) => Promise<any>
+  onSubmit: () => void
   submitText?: string
 }) {
   const [email, setEmail] = useState('')
