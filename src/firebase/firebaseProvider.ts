@@ -1,8 +1,8 @@
+import { setSessionCookie } from '@/utils/cookieHelpers'
 import { firebaseApp } from './firebaseConfig'
 import { GoogleAuthProvider, User, getAuth, getRedirectResult } from 'firebase/auth'
 
 import React, { useEffect, useState } from 'react'
-import { redirect } from 'react-router-dom'
 
 const auth = getAuth(firebaseApp)
 
@@ -15,11 +15,10 @@ export default function FirebaseProvider({ children }) {
         if (result) {
           // This gives you a Google Access Token. You can use it to access Google APIs.
           const credential = GoogleAuthProvider.credentialFromResult(result)
-          // const token = credential.accessToken
-          console.log(credential)
-          console.log(result)
-          window.location.replace(`http://localhost:3000?token=${credential?.accessToken}`)
-          // create user in db
+          if (result.user) {
+            setSessionCookie('uid', result.user.uid)
+            window.location.replace(`http://localhost:3000?token=${credential?.accessToken}`)
+          }
         }
       })
       .catch((error) => {

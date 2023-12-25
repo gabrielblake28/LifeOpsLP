@@ -6,7 +6,7 @@ export default function HomePage() {
     <Layout>
       <Hero
         title="Modernized goal manager"
-        content="Accomplish goals with the efficiency of a Google  engineer"
+        content="Make success a habit with advanced goal management"
         illustration={<HeroIllustration />}
       />
     </Layout>
